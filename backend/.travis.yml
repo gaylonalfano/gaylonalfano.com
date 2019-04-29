@@ -1,3 +1,5 @@
+# Travis only runs builds on the commits you push
+# after you’ve added a .travis.yml file.
 # Language we'll be using
 language: python
 python:
