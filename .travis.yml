@@ -14,7 +14,9 @@ services:
 # Specify a "before" script that TCI will run before it executes
 # any of the automation commands that we input next. In our case,
 # we need it to install docker-compose before anything
-before_script: pip install docker-compose
+before_script:
+	- cd backend
+	- pip install docker-compose
 
 # Specify the script
 script:
