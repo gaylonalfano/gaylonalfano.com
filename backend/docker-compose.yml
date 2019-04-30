@@ -4,7 +4,8 @@ version: '3.7'
 # Define the services that make up our application
 services:
   app:
-    build: .
+    build:
+      context: .
     command: python /app/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
