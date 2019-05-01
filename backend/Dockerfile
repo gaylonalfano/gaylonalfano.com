@@ -11,17 +11,34 @@ LABEL maintainer="Gaylon Alfano"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+RUN pwd
+RUN ls
+
 # -- Switch to this new directory (like cd basically) and set as default
 # -- Any application we run from the Docker container will start/run from this directory
 WORKDIR /app
 
+RUN pwd
+RUN ls
+
 # -- Install dependencies from pipenv
 COPY Pipfile Pipfile.lock /app/
+
+RUN pwd
+RUN ls
+
 RUN pip install pipenv && pipenv install --system
 
+RUN pwd
+RUN ls
+
 # -- Copy from local machine /app folder to /app folder in our image.
-# -- Allows us to copy out code we create and copy to our Docker image.
+# -- Allows us to copy our code we create and copy to our Docker image.
 COPY . /app/
+
+RUN pwd
+RUN ls
+RUN ls app
 
 # -- Create a user that is going to run our application using Docker
 # -- The -D specifies that the user will ONLY run our process from our project.
