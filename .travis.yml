@@ -12,23 +12,14 @@ services:
   - docker
 
 # Going to try changing to backend dir before installing
-before_install:
-  - pwd
-  - cd backend
-  - ls backend
+before_install: cd backend
 
 # Specify a "before" script that TCI will run before it executes
 # any of the automation commands that we input next. In our case,
 # we need it to install docker-compose before anything
-before_script:
-  - pwd
-  - pip install docker-compose
+before_script: pip install docker-compose
 
 # Specify the script
 script:
   # Run docker-compose command for running our tests and our linting tool
-  - pwd
-  - ls
-  - cd backend
-  - ls
   - docker-compose run app python manage.py test && flake8
