@@ -22,4 +22,4 @@ before_script: pip install docker-compose
 # Specify the script
 script:
   # Run docker-compose command for running our tests and our linting tool
-  - docker-compose run app python manage.py test && flake8
+  - docker-compose run app python manage.py test
