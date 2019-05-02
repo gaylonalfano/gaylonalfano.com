@@ -19,7 +19,7 @@ WORKDIR /app
 COPY Pipfile Pipfile.lock /app/
 
 
-RUN pip install pipenv && pipenv install --system
+RUN pip install pipenv && pipenv install --deploy --system
 
 # -- Copy from local machine /app folder to /app folder in our image.
 # -- Allows us to copy our code we create and copy to our Docker image.
