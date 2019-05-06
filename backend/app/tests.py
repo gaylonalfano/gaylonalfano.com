@@ -1,5 +1,5 @@
 # backend/app/tests.py
-# Import the Django TestCase. This is a class that has a bunch of helper functions
+# Import the Django TestCase. A class that has a bunch of helper functions
 from django.test import TestCase
 
 # Import function we're going to test
